@@ -7,11 +7,11 @@ const FB = require('./facebook.js');
 const Config = require('./const.js');
 const Config1 = require('config');
 
-
+/*
 const accessToken = (process.env.accessToken) ?
   (process.env.accessToken) :
   Config1.get('accessToken');
-
+*/
 const firstEntityValue = (entities, entity) => {
   const val = entities && entities[entity] &&
     Array.isArray(entities[entity]) &&
@@ -486,7 +486,7 @@ const actions = {
 
 };// end of actions
 
-accessToken = DQF23TOEJU3ASQTI3IKPJ33HUP64A3CZ;
+const accessToken = DQF23TOEJU3ASQTI3IKPJ33HUP64A3CZ;
 const getWit = () => {
   return new Wit(accessToken, actions);
 };
