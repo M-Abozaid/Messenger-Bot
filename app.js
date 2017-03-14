@@ -96,6 +96,10 @@ if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN && SERVER_URL)) {
   process.exit(1);
 }
 
+
+app.get('/', function(req, res) {
+  res.send('"Only those who will risk going too far can possibly find out how far one can go." - T.S. Eliot');
+});
 /*
  * Use your own validation token. Check that the token used in the Webhook 
  * setup is the same token used here.
@@ -121,7 +125,7 @@ app.get('/webhook', function(req, res) {
  *
  */
 
- 
+
 // The main message handler
 app.post('/webhook', (req, res) => {
   // Parsing the Messenger API response
