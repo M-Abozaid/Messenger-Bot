@@ -1,9 +1,9 @@
 'use strict';
 
 // Wit.ai parameters
-const accessToken = process.env.accessToken;
-if (!accessToken) {
-  throw new Error('missing accessToken');
+const WIT_TOKEN = "DQF23TOEJU3ASQTI3IKPJ33HUP64A3CZ";
+if (!WIT_TOKEN) {
+  throw new Error('missing WIT_TOKEN');
 }
 
 // Messenger API parameters
@@ -15,7 +15,7 @@ if (!FB_VERIFY_TOKEN) {
 }
 
 module.exports = {
-  accessToken: accessToken,
+  WIT_TOKEN: WIT_TOKEN,
   FB_PAGE_TOKEN: FB_PAGE_TOKEN,
   FB_VERIFY_TOKEN: FB_VERIFY_TOKEN,
 };
