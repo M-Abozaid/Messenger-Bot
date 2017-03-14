@@ -4,12 +4,13 @@
 // See https://wit.ai/sungkim/weather/stories and https://wit.ai/docs/quickstart
 const Wit = require('node-wit').Wit;
 const FB = require('./facebook.js');
-const Config = require('config');
+const Config = require('./const.js');
 
+/*
 const WIT_TOKEN = (process.env.WIT_TOKEN) ?
   (process.env.WIT_TOKEN) :
   Config.get('WIT_TOKEN');
-
+*/
 const firstEntityValue = (entities, entity) => {
   const val = entities && entities[entity] &&
     Array.isArray(entities[entity]) &&
