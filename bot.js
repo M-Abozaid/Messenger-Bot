@@ -486,7 +486,7 @@ const actions = {
 
 };// end of actions
 
-const accessToken = DQF23TOEJU3ASQTI3IKPJ33HUP64A3CZ;
+const accessToken = "DQF23TOEJU3ASQTI3IKPJ33HUP64A3CZ";
 const getWit = () => {
   return new Wit(accessToken, actions);
 };
