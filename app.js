@@ -86,9 +86,9 @@ const SERVER_URL = (process.env.SERVER_URL) ?
   config.get('serverURL');
 
 // WIT_TOKEN
-const WIT_TOKEN = (process.env.WIT_TOKEN) ?
-  (process.env.WIT_TOKEN) :
-  config.get('WIT_TOKEN');
+const accessToken = (process.env.accessToken) ?
+  (process.env.accessToken) :
+  config.get('accessToken');
 
 
 if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN && SERVER_URL)) {
@@ -190,9 +190,10 @@ app.post('/webhook', (req, res) => {
 // Start server
 // Webhooks must be available via SSL with a certificate signed by a valid 
 // certificate authority.
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
-});
+
+//app.listen(app.get('port'), function() {
+//  console.log('Node app is running on port', app.get('port'));
+//});
 
 module.exports = app;
 
