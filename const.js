@@ -1,9 +1,9 @@
 'use strict';
 
 // Wit.ai parameters
-const WIT_TOKEN = process.env.WIT_TOKEN;
-if (!WIT_TOKEN) {
-  throw new Error('missing WIT_TOKEN');
+const accessToken = process.env.accessToken;
+if (!accessToken) {
+  throw new Error('missing accessToken');
 }
 
 // Messenger API parameters
