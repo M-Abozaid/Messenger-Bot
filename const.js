@@ -1,7 +1,7 @@
 'use strict';
 
 // Wit.ai parameters
-const WIT_TOKEN = "DQF23TOEJU3ASQTI3IKPJ33HUP64A3CZ";
+const WIT_TOKEN = "3M4PL43CYYL5FD4UAGSP4SD2S42WZNJX";
 if (!WIT_TOKEN) {
   throw new Error('missing WIT_TOKEN');
 }

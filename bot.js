@@ -480,14 +480,21 @@ const actions = {
   };  
 
   FB.callSendAPI(messageData);
-}
+},
 
-
+// fetch-weather bot executes
+  ['fetch-weather'](sessionId, context, cb) {
+    // Here should go the api call, e.g.:
+    // context.forecast = apiCall(context.loc)
+    context.forecast = 'sunny';
+    cb(context);
+  },
 
 };// end of actions
+var accessToken = "3M4PL43CYYL5FD4UAGSP4SD2S42WZNJX";
 
 const getWit = () => {
-  return new Wit({accessToken:Config.WIT_TOKEN}, actions);
+  return new Wit(accessToken,actions);
 };
 
 exports.getWit = getWit;

@@ -86,9 +86,9 @@ const SERVER_URL = (process.env.SERVER_URL) ?
   config.get('serverURL');
 
 // WIT_TOKEN
-const accessToken = (process.env.accessToken) ?
-  (process.env.accessToken) :
-  config.get('accessToken');
+const WIT_TOKEN = (process.env.WIT_TOKEN) ?
+  (process.env.WIT_TOKEN) :
+  config.get('WIT_TOKEN');
 
 
 if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN && SERVER_URL)) {
