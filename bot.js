@@ -486,10 +486,11 @@ const actions = {
 
 };// end of actions
 
-//const accessToken = "DQF23TOEJU3ASQTI3IKPJ33HUP64A3CZ";
-const accessToken = "SXBIU2HR6Z3WKFS2OKWH56GRI7J7KINW";
+const accessToken = "DQF23TOEJU3ASQTI3IKPJ33HUP64A3CZ";
+//const accessToken = "SXBIU2HR6Z3WKFS2OKWH56GRI7J7KINW";
 const getWit = () => {
-  return new Wit(accessToken, actions);
+  return new Wit({accessToken : accessToken, 
+    actions:actions});
 };
 
 exports.getWit = getWit;
