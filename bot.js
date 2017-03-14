@@ -77,7 +77,7 @@ const actions = {
   // fetch-weather bot executes
   
   // fb functions
-
+/*
    receivedAccountLink(event) {
   var senderID = event.sender.id;
   var recipientID = event.recipient.id;
@@ -89,10 +89,9 @@ const actions = {
     "and auth code %s ", senderID, status, authCode);
 },
 
-/*
- * Send an image using the Send API.
- *
- */
+
+ //* Send an image using the Send API.
+ 
  sendImageMessage(recipientId) {
   var messageData = {
     recipient: {
@@ -111,10 +110,9 @@ const actions = {
   FB.callSendAPI(messageData);
 },
 
-/*
- * Send a Gif using the Send API.
- *
- */
+
+ //* Send a Gif using the Send API.
+ 
  sendGifMessage(recipientId) {
   var messageData = {
     recipient: {
@@ -133,10 +131,9 @@ const actions = {
   FB.callSendAPI(messageData);
 },
 
-/*
- * Send audio using the Send API.
- *
- */
+
+ //* Send audio using the Send API.
+ 
  sendAudioMessage(recipientId) {
   var messageData = {
     recipient: {
@@ -155,10 +152,9 @@ const actions = {
   FB.callSendAPI(messageData);
 },
 
-/*
- * Send a video using the Send API.
- *
- */
+
+ //* Send a video using the Send API.
+
  sendVideoMessage(recipientId) {
   var messageData = {
     recipient: {
@@ -177,10 +173,10 @@ const actions = {
   FB.callSendAPI(messageData);
 },
 
-/*
- * Send a file using the Send API.
- *
- */
+
+ //* Send a file using the Send API.
+ 
+ 
  sendFileMessage(recipientId) {
   var messageData = {
     recipient: {
@@ -199,10 +195,9 @@ const actions = {
   FB.callSendAPI(messageData);
 },
 
-/*
- * Send a text message using the Send API.
- *
- */
+
+ //* Send a text message using the Send API.
+ 
  sendTextMessage(recipientId, messageText) {
   var messageData = {
     recipient: {
@@ -217,10 +212,9 @@ const actions = {
   FB.callSendAPI(messageData);
 },
 
-/*
- * Send a button message using the Send API.
- *
- */
+
+ //* Send a button message using the Send API.
+ 
  sendButtonMessage(recipientId) {
   var messageData = {
     recipient: {
@@ -253,10 +247,9 @@ const actions = {
   FB.callSendAPI(messageData);
 },
 
-/*
- * Send a Structured Message (Generic Message type) using the Send API.
- *
- */
+
+ //* Send a Structured Message (Generic Message type) using the Send API.
+
  sendGenericMessage(recipientId) {
   var messageData = {
     recipient: {
@@ -304,10 +297,9 @@ const actions = {
   FB.callSendAPI(messageData);
 },
 
-/*
- * Send a receipt message using the Send API.
- *
- */
+
+ //* Send a receipt message using the Send API.
+ 
  sendReceiptMessage(recipientId) {
   // Generate a random receipt ID as the API requires a unique ID
   var receiptId = "order" + Math.floor(Math.random()*1000);
@@ -370,10 +362,9 @@ const actions = {
   FB.callSendAPI(messageData);
 },
 
-/*
- * Send a message with Quick Reply buttons.
- *
- */
+
+ //* Send a message with Quick Reply buttons.
+ 
  sendQuickReply(recipientId) {
   var messageData = {
     recipient: {
@@ -404,10 +395,9 @@ const actions = {
   FB.callSendAPI(messageData);
 },
 
-/*
- * Send a read receipt to indicate the message has been read
- *
- */
+
+ //* Send a read receipt to indicate the message has been read
+ 
  sendReadReceipt(recipientId) {
   console.log("Sending a read receipt to mark message as seen");
 
@@ -421,10 +411,9 @@ const actions = {
   FB.callSendAPI(messageData);
 },
 
-/*
- * Turn typing indicator on
- *
- */
+
+ //* Turn typing indicator on
+ 
  sendTypingOn(recipientId) {
   console.log("Turning typing indicator on");
 
@@ -438,10 +427,9 @@ const actions = {
   FB.callSendAPI(messageData);
 },
 
-/*
- * Turn typing indicator off
- *
- */
+
+ //* Turn typing indicator off
+ 
  sendTypingOff(recipientId) {
   console.log("Turning typing indicator off");
 
@@ -455,10 +443,9 @@ const actions = {
   FB.callSendAPI(messageData);
 },
 
-/*
- * Send a message with the account linking call-to-action
- *
- */
+
+ //* Send a message with the account linking call-to-action
+ 
  sendAccountLinking(recipientId) {
   var messageData = {
     recipient: {
@@ -481,7 +468,7 @@ const actions = {
 
   FB.callSendAPI(messageData);
 },
-
+*/
 // fetch-weather bot executes
   ['fetch-weather'](sessionId, context, cb) {
     // Here should go the api call, e.g.:
