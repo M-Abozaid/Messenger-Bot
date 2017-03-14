@@ -15,7 +15,7 @@ if (!FB_VERIFY_TOKEN) {
 }
 
 module.exports = {
-  WIT_TOKEN: WIT_TOKEN,
+  accessToken: accessToken,
   FB_PAGE_TOKEN: FB_PAGE_TOKEN,
   FB_VERIFY_TOKEN: FB_VERIFY_TOKEN,
 };
