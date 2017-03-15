@@ -63,6 +63,24 @@ const actions = {
 
     cb(context);
   },
+  sendImageMessage(context ) {
+    const recipientId = context._fbid_;
+    var messageData = {
+      recipient: {
+        id: recipientId
+      },
+      message: {
+        attachment: {
+          type: "image",
+          payload: {
+            url: SERVER_URL + "/assets/rift.png"
+          }
+        }
+      }
+    };
+
+    FB.callSendAPI(messageData);
+  }
 
   error(sessionId, context, error) {
     console.log(error.message);
@@ -75,23 +93,7 @@ const actions = {
     context.forecast = 'sunny';
     cb(context);
   },
-  sendImageMessage(recipientId) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      attachment: {
-        type: "image",
-        payload: {
-          url: SERVER_URL + "/assets/rift.png"
-        }
-      }
-    }
-  };
-
-  FB.callSendAPI(messageData);
-}
+  
 
 };
 
