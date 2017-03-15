@@ -81,7 +81,7 @@ const actions = {
         }
 
         // Let's give the wheel back to our bot
-        cb();
+        return Promise.resolve(context);
       });
     } else {
       console.log('Oops! Couldn\'t find user in context:', context);
@@ -115,8 +115,8 @@ const actions = {
       }
     };
 
-    FB.callSendAPI(messageData);
-    cb();
+    FB.callSendAPI(messageData,context);
+    
   },
 
   error(sessionId, context, error) {
