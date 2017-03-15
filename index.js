@@ -148,30 +148,18 @@ app.post('/webhook', (req, res) => {
 
       // Let's forward the message to the Wit.ai Bot Engine
       // This will run all actions until our bot has nothing left to do
-      wit.runActions(
-        sessionId, // the user's current session
-        msg, // the user's message 
-        sessions[sessionId].context, // the user's current session state
-        (error, context) => {
-          if (error) {
-            console.log('Oops! Got an error from Wit:', error);
-          } else {
-            // Our bot did everything it has to do.
-            // Now it's waiting for further messages to proceed.
-            console.log('Waiting for futher messages.');
-
-            // Based on the session state, you might want to reset the session.
-            // This depends heavily on the business logic of your bot.
-            // Example:
-            // if (context['done']) {
-            //   delete sessions[sessionId];
-            // }
-
-            // Updating the user's current session state
-            sessions[sessionId].context = context;
-          }
-        }
-      );
+      const context0 = {};
+      wit.runActions(sessionId, 'what is the weather in London?', context0)
+        .then((context1) => {
+          console.log('The session state is now: ' + JSON.stringify(context1));
+          return client.runActions(sessionId, 'and in Brussels?', context1);
+        })
+        .then((context2) => {
+          console.log('The session state is now: ' + JSON.stringify(context2));
+        })
+        .catch((e) => {
+          console.log('Oops! Got an error: ' + e);
+        });
     }
   }
   res.sendStatus(200);
