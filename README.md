@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Wit-Facebook
 [![Build Status](https://travis-ci.org/hunkim/Wit-Facebook.svg?branch=master)](https://travis-ci.org/hunkim/Wit-Facebook)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/7442b6c4eb6b48a890d751c0da5a3b6d)](https://www.codacy.com/app/hunkim/Wit-Facebook)
@@ -175,3 +176,7 @@ I reused soruce code and configuration from:
 
 ## Contribution
 We welcome your comments and PRs!
+=======
+# Messenger-Bot
+A sample Facebook Messenger bot using NodeJs Wit.AI Heroku engine
+>>>>>>> b154b65f66028c808c33fd24986d8c59188c9e01
