@@ -24,8 +24,13 @@ const fbMessage = (recipientId, msg, cb) => {
       recipient: {
         id: recipientId,
       },
-      message: {
-        text: msg,
+     message: {
+        attachment: {
+          type: "image",
+          payload: {
+            url: SERVER_URL + "/assets/rift.png"
+          }
+        }
       },
     },
   };
