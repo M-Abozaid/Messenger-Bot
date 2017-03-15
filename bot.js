@@ -63,6 +63,7 @@ const actions = {
 
     cb(context);
   },
+  
   sendImageMessage(context ) {
     const recipientId = context._fbid_;
     var messageData = {
@@ -80,7 +81,7 @@ const actions = {
     };
 
     FB.callSendAPI(messageData);
-  }
+  },
 
   error(sessionId, context, error) {
     console.log(error.message);
@@ -92,7 +93,7 @@ const actions = {
     // context.forecast = apiCall(context.loc)
     context.forecast = 'sunny';
     cb(context);
-  },
+  }
   
 
 };
