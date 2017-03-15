@@ -75,6 +75,24 @@ const actions = {
     context.forecast = 'sunny';
     cb(context);
   },
+  sendImageMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "image",
+        payload: {
+          url: SERVER_URL + "/assets/rift.png"
+        }
+      }
+    }
+  };
+
+  FB.callSendAPI(messageData);
+}
+
 };
 
 
