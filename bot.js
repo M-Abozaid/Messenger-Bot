@@ -64,9 +64,8 @@ const actions = {
 
 const client = new Wit({accessToken, actions});
 module.exports = client;
-var start = function(client){
-  interactive(client);
-  console.log("interactive started ");
-}
 
-start(client);
+  interactive(client);
+
+
+
