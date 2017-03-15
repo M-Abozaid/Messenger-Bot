@@ -1,30 +1,27 @@
-/*
- * Copyright 2016-present, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
-/* jshint node: true, devel: true */
 'use strict';
 
-const 
-  bodyParser = require('body-parser'),
-  config = require('config'),
-  crypto = require('crypto'),
-  express = require('express'),
-  https = require('https'),  
-  request = require('request');
-
+// Messenger API integration example
+// We assume you have:
+// * a Wit.ai bot setup (https://wit.ai/docs/quickstart)
+// * a Messenger Platform setup (https://developers.facebook.com/docs/messenger-platform/quickstart)
+// You need to `npm install` the following dependencies: body-parser, express, request.
+//
+const bodyParser = require('body-parser');
+const express = require('express');
 
 // get Bot, const, and Facebook API
 const bot = require('./bot.js');
+const Config = require('./const.js');
+const config = require('config');
 const FB = require('./facebook.js');
 
 // Setting up our bot
 const wit = bot.getWit();
+
+// Webserver parameter
+const PORT = process.env.PORT || 8445;
+
+// Wit.ai bot specific code
 
 // This will contain all user sessions.
 // Each session has an entry:
@@ -53,17 +50,18 @@ const findOrCreateSession = (fbid) => {
   return sessionId;
 };
 
-var app = express();
-app.set('port', process.env.PORT || 5000);
-app.set('view engine', 'ejs');
-//app.use(bodyParser.json({ verify: verifyRequestSignature }));
-app.use(express.static('public'));
+// Starting our webserver and putting it all together
+const app = express();
+app.set('port', PORT);
+app.listen(app.get('port'));
+app.use(bodyParser.json());
+console.log("I'm wating for you @" + PORT);
 
-/*
- * Be sure to setup your config values before running this code. You can 
- * set them using environment variables or modifying the config file in /config.
- *
- */
+// index. Let's say something fun
+app.get('/', function(req, res) {
+  res.send('"Only those who will risk going too far can possibly find out how far one can go." - T.S. Eliot');
+});
+
 
 // App Secret can be retrieved from the App Dashboard
 const APP_SECRET = (process.env.MESSENGER_APP_SECRET) ? 
@@ -116,15 +114,6 @@ app.get('/webhook', function(req, res) {
     res.sendStatus(403);          
   }  
 });
-
-
-/*
- * All callbacks for Messenger are POST-ed. They will be sent to the same
- * webhook. Be sure to subscribe your app to your page to receive callbacks
- * for your page. 
- * https://developers.facebook.com/docs/messenger-platform/product-overview/setup#subscribe_app
- *
- */
 
 
 // The main message handler
@@ -187,14 +176,3 @@ app.post('/webhook', (req, res) => {
   }
   res.sendStatus(200);
 });
-
-// Start server
-// Webhooks must be available via SSL with a certificate signed by a valid 
-// certificate authority.
-
-//app.listen(app.get('port'), function() {
-//  console.log('Node app is running on port', app.get('port'));
-//});
-
-module.exports = app;
-
