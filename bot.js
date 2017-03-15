@@ -63,8 +63,8 @@ const actions = {
 
     cb(context);
   },
-  
-  sendImageMessage(context ) {
+
+  sendImageMessage(context,cb ) {
     const recipientId = context._fbid_;
     var messageData = {
       recipient: {
@@ -81,6 +81,7 @@ const actions = {
     };
 
     FB.callSendAPI(messageData);
+    cb();
   },
 
   error(sessionId, context, error) {
