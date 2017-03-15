@@ -45,13 +45,8 @@ const firstEntityValue = (entities, entity) => {
 
 const actions = {
   send(request, response) {
-    const sessionId = request.sessionId;
-    const context = request.context;
-    const entities = request.entities;
-
-    const text = response.text;
-    const quickreplies = response.quickreplies;
-
+    const {sessionId, context, entities} = request;
+    const {text, quickreplies} = response;
     console.log('sending...', JSON.stringify(response));
   },
   getForecast({context, entities}) {
@@ -69,7 +64,6 @@ const actions = {
 
 const client = new Wit({accessToken, actions});
 module.exports = client;
-
 var start = function(client){
   interactive(client);
   console.log("interactive started ");
